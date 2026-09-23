@@ -100,5 +100,18 @@ void throwsExceptionForEmptyArray() {
     );
 }
 
+@Test
+void returnsMinimumValue() {
+    int result = CourseToolkit.min(new int[]{5, -2, 10, 3});
+
+    assertEquals(-2, result);
+}
+
+@Test
+void returnsMaximumValue() {
+    int result = CourseToolkit.max(new int[]{5, -2, 10, 3});
+
+    assertEquals(10, result);
+}
 }
 
