@@ -22,7 +22,8 @@ class CourseToolkitTest {
 
         assertFalse(result);
     }
-    @Test 
+
+    @Test
     void returnsTrueForNegativeEvenNumber() {
         boolean result = CourseToolkit.isEven(-8);
 
@@ -30,88 +31,94 @@ class CourseToolkitTest {
     }
 
     @Test
-void returnsTrueForPrimeNumber() {
-    boolean result = CourseToolkit.isPrime(7);
+    void returnsTrueForPrimeNumber() {
+        boolean result = CourseToolkit.isPrime(7);
 
-    assertTrue(result);
-}
+        assertTrue(result);
+    }
 
-@Test
-void returnsFalseForCompositeNumber() {
-    boolean result = CourseToolkit.isPrime(8);
+    @Test
+    void returnsFalseForCompositeNumber() {
+        boolean result = CourseToolkit.isPrime(8);
 
-    assertFalse(result);
-}
+        assertFalse(result);
+    }
 
-@Test
-void returnsFalseForNumberLessThanTwo() {
-    boolean result = CourseToolkit.isPrime(1);
+    @Test
+    void returnsFalseForNumberLessThanTwo() {
+        boolean result = CourseToolkit.isPrime(1);
 
-    assertFalse(result);
-}
+        assertFalse(result);
+    }
 
-@Test
-void returnsTrueForTwo() {
-    boolean result = CourseToolkit.isPrime(2);
+    @Test
+    void returnsTrueForTwo() {
+        boolean result = CourseToolkit.isPrime(2);
 
-    assertTrue(result);
-}
+        assertTrue(result);
+    }
 
-@Test
-void returnsTrueForPalindrome() {
-    boolean result = CourseToolkit.isPalindrome("level");
+    @Test
+    void returnsTrueForPalindrome() {
+        boolean result = CourseToolkit.isPalindrome("level");
 
-    assertTrue(result);
-}
+        assertTrue(result);
+    }
 
-@Test
-void returnsFalseForNonPalindrome() {
-    boolean result = CourseToolkit.isPalindrome("hello");
+    @Test
+    void returnsFalseForNonPalindrome() {
+        boolean result = CourseToolkit.isPalindrome("hello");
 
-    assertFalse(result);
-}
+        assertFalse(result);
+    }
 
-@Test
-void returnsFalseWhenCaseIsDifferent() {
-    boolean result = CourseToolkit.isPalindrome("Level");
+    @Test
+    void returnsFalseWhenCaseIsDifferent() {
+        boolean result = CourseToolkit.isPalindrome("Level");
 
-    assertFalse(result);
-}
+        assertFalse(result);
+    }
 
-@Test
+    @Test
     void returnsAverageForNumbers() {
         double result = CourseToolkit.average(new int[]{1, 2, 3, 4});
 
         assertEquals(2.5, result);
     }
 
-@Test
-void returnsAverageForNegativeNumbers() {
-    double result = CourseToolkit.average(new int[]{-2, -4, -6});
+    @Test
+    void returnsAverageForNegativeNumbers() {
+        double result = CourseToolkit.average(new int[]{-2, -4, -6});
 
-    assertEquals(-4.0, result);
+        assertEquals(-4.0, result);
+    }
+
+    @Test
+    void throwsExceptionForEmptyArray() {
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> CourseToolkit.average(new int[]{})
+        );
+    }
+
+    @Test
+    void returnsMinimumValue() {
+        int result = CourseToolkit.min(new int[]{5, -2, 10, 3});
+
+        assertEquals(-2, result);
+    }
+
+    @Test
+    void returnsMaximumValue() {
+        int result = CourseToolkit.max(new int[]{5, -2, 10, 3});
+
+        assertEquals(10, result);
+    }
+
+    @Test
+    void returnsTrueForZero() {
+        boolean result = CourseToolkit.isEven(0);
+
+        assertTrue(result);
+    }
 }
-
-@Test
-void throwsExceptionForEmptyArray() {
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> CourseToolkit.average(new int[]{})
-    );
-}
-
-@Test
-void returnsMinimumValue() {
-    int result = CourseToolkit.min(new int[]{5, -2, 10, 3});
-
-    assertEquals(-2, result);
-}
-
-@Test
-void returnsMaximumValue() {
-    int result = CourseToolkit.max(new int[]{5, -2, 10, 3});
-
-    assertEquals(10, result);
-}
-}
-
